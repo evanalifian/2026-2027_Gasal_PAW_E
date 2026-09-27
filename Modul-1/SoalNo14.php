@@ -1,6 +1,6 @@
 <?php
-function familyName($fname){
-	echo $fname . "<br>";
+function familyName($fname) {
+    echo $fname . "<br>";
 }
 
 familyName("Jani");
