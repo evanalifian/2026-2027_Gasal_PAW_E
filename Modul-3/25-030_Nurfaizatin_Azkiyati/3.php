@@ -1,35 +1,46 @@
-<?php 
-
-//3.1
-echo "3.1" . "<br>";
-$height = array("Andy"=>"176", "Barry"=>"165", "Charlie"=>"170", "David"=>"180", "Ethan"=>"172", "Frank"=>"168", "George"=>"175", "Harry"=>"182");
-
-print_r($height);
-print "<br>Nilai dengan indeks terakhir: ";
-print_r(end($height));
-
-print "<br><br>";
-
-unset($height["Barry"]);
-
-print_r($height);
-print "<br>Nilai dengan indeks terakhir setelah dihapus: ";
-print_r(end($height));
-
-echo "<br>"."<br>";
-
-//3,2
-echo "3.2" . "<br>";
-$weight = [
+<?php
+echo "3.1 <br>";
+$height = array(
+    "Andy" => "176",
+    "Barry" => "165",
+    "Charlie" => "170",
+    "David" => "180",
+    "Ethan" => "172",
+    "Frank" => "168",
+    "George" => "175",
+    "Harry" => "182"
+);
+$weight=array(
     "Andy" => "70",
     "Barry" => "65",
     "Charlie" => "75"
-];
+);
 
-echo "weight = ";
-print_r($weight);
+$data = [];
+foreach ($height as $key => $value) {
+    $data[] = '"' . $key . '"=>"' . $value . '"';
+}
 
-echo "<br>Data kedua: " . $weight["Barry"];
+echo 'height = (' . implode(', ', $data) . ')<br>';
+echo 'Nilai dengan indeks terakhir: ' . end($height) . '<br><br>';
+
+unset($height["Barry"]);
+
+$data = [];
+foreach ($height as $key => $value) {
+    $data[] = '"' . $key . '"=>"' . $value . '"';
+}
+
+echo 'height = (' . implode(', ', $data) . ')<br>';
+echo 'Nilai dengan indeks terakhir setelah dihapus: ' . end($height) . "<br><br>";
 
 
+//3.2
+echo "3.2 <br>";
+$data = [];
+foreach ($weight as $key => $value) {
+    $data[] = '"' . $key . '"=>"' . $value . '"';
+}
+echo 'weight = (' . implode(', ', $data) . ')<br>';
+echo 'Data Kedua: ' . $weight["Barry"];
 ?>
